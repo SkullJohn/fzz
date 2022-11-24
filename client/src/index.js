@@ -2,10 +2,17 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { EthosConnectProvider } from 'ethos-connect';
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <EthosConnectProvider
+      ethosConfiguration={{
+        hideEmailSignIn: true // defaults to false
+      }}
+    >
+    <App /></EthosConnectProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

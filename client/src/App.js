@@ -5,10 +5,12 @@ import { StreamChat } from "stream-chat";
 import { Chat } from "stream-chat-react";
 import Cookies from "universal-cookie";
 import { useState } from "react";
+import { SignInButton } from 'ethos-connect'
+
 import JoinGame from "./components/JoinGame";
 
 function App() {
-  const api_key = "nv2zh5h8pmyh";
+  const api_key = "dzeabewv2jh6";
   const cookies = new Cookies();
   const token = cookies.get("token");
   const client = StreamChat.getInstance(api_key);
@@ -53,6 +55,7 @@ function App() {
         <>
           <SignUp setIsAuth={setIsAuth} />
           <Login setIsAuth={setIsAuth} />
+          <SignInButton>CONNECT YOUR WALLET</SignInButton>
         </>
       )}
     </div>
