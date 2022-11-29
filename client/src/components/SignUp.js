@@ -49,6 +49,7 @@ function SignUp({ setIsAuth }) {
       />
       <button onClick={signUp}> Sign Up</button>
     </div>
+    
   );
 }
 
