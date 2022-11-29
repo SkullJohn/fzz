@@ -25,7 +25,7 @@ body {
   margin: 0;
  
 }
-*//*
+
 .login,
 .signUp {
   display: flex;
@@ -63,7 +63,7 @@ body {
   font-size: 20px;
   color: red;
 }
-*/
+
 .board {
   width: 500px;
   height: 500px;
@@ -272,7 +272,7 @@ display: block;
 
 
 
- .a{
+.a{
   flex: initial;
   display: flex;
   flex-direction: row;
@@ -280,16 +280,16 @@ display: block;
   
   
  }
- .socials{
+.socials{
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
  }
- .titles{
+.titles{
   background-color: #103ea0;
  }
 
- p {
+p {
   font-family: Arial, Helvetica, sans-serif;
   color: white;
   font-size: 20px;
