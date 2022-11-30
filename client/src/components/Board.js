@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useChannelStateContext, useChatContext } from "stream-chat-react";
 import Square from "./Square";
 import { Patterns } from "../WinningPatterns";
+import { SignInButton, ethos } from "ethos-connect";
+
 function Board({ result, setResult }) {
   const [board, setBoard] = useState(["", "", "", "", "", "", "", "", ""]);
   const [player, setPlayer] = useState("X");
@@ -82,6 +84,7 @@ function Board({ result, setResult }) {
   return (
     <div className="board">
       <div className="row">
+      <SignInButton/>     
         <Square
           val={board[0]}
           chooseSquare={() => {

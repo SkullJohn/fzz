@@ -2,17 +2,19 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { EthosConnectProvider } from 'ethos-connect';
+import {EthosConnectProvider}from 'ethos-connect';
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <EthosConnectProvider
-      ethosConfiguration={{
-        hideEmailSignIn: true // defaults to false
-      }}
+     <EthosConnectProvider
+   
+      dappName="Skull Sui dapp"
+   
+      connectMessage="Connect your wallet" 
     >
-    <App /></EthosConnectProvider>
+    <App />
+    </EthosConnectProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

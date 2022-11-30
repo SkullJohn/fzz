@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Axios from "axios";
 import Cookies from "universal-cookie";
+import { SignInButton, ethos } from "ethos-connect";
+
 
 function Login({ setIsAuth }) {
   const [username, setUsername] = useState("");
@@ -24,6 +26,7 @@ function Login({ setIsAuth }) {
   return (
     <div className="login">
       <label> Login</label>
+     
 
       <input
         placeholder="Username"
@@ -38,7 +41,7 @@ function Login({ setIsAuth }) {
           setPassword(event.target.value);
         }}
       />
-      <button onClick={login}> Login</button>
+      <button onClick={login}>  <SignInButton/></button>
     </div>
   );
 }

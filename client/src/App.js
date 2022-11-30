@@ -5,7 +5,6 @@ import { StreamChat } from "stream-chat";
 import { Chat } from "stream-chat-react";
 import Cookies from "universal-cookie";
 import { useState } from "react";
-import { SignInButton } from 'ethos-connect';
 import { Link, NavLink } from 'react-router-dom'
 import JoinGame from "./components/JoinGame";
 import logo from "./assets/NarhwalsandSkulls.png";
@@ -15,14 +14,18 @@ import discord from "./assets/discord.svg";
 import twitter from "./assets/twitter.svg";
 
 
+import { SignInButton, ethos } from "ethos-connect";
+
+
+
 function App() {
-  const api_key = "dzeabewv2jh6";
+  const { status, wallet } = ethos.useWallet();
+  const api_key = "nv2zh5h8pmyh";
   const cookies = new Cookies();
   const token = cookies.get("token");
   const client = StreamChat.getInstance(api_key);
   const [isAuth, setIsAuth] = useState(false);
-  let url = 'https://twitter.com/Skullsui'
-  
+
   const logOut = () => {
     cookies.remove("token");
     cookies.remove("userId");
@@ -51,13 +54,20 @@ function App() {
         setIsAuth(true);
       });
   }
+
   return (
+
     <><div className="App"> 
     
         <div className="logo">
                        <img className="img-responsive" src={logo} alt="logo" /> 
-                       <SignInButton className="connect">CONNECT YOUR WALLET</SignInButton>
-                    </div>
+                       <SignInButton className="connect"/>      </div>
+                   
+           
+                  
+
+
+   
       
      {/* {isAuth ? (
         <Chat client={client}>
@@ -66,10 +76,10 @@ function App() {
         </Chat>
       )*/} : (
         <>
-         {/* 
+          {/* 
            <SignUp setIsAuth={setIsAuth} />
           <Login setIsAuth={setIsAuth} />
-        */}
+         */}
             
             
           
@@ -109,8 +119,7 @@ function App() {
       
     </div> </div>
     <div className='titless'> <p>Skullsui</p>    <div className='socials'> 
-   <a href={url}><img src={require('./assets/twitter.svg').default}  style={{ height: 53, width: 36 }}alt='mySvgImage' /></a> 
-   <a href={'https://twitter.com/Skullsui'}><img src={require('./assets/discord.svg').default} style={{ height: 53, width: 36 }}alt='mySvgImage' /></a> 
+      <a href={'https://twitter.com/Skullsui'}><img src={require('./assets/discord.svg').default} style={{ height: 53, width: 36 }}alt='mySvgImage' /></a> 
 
       
      </div> </div> 
@@ -131,9 +140,9 @@ function App() {
                               <h1>CLUTCHY</h1>
                              
                                 
-                                                         
+                                                     
                                  </div> </div>
-    </>
+    </>  
   );
   
 }

@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useChatContext, Channel } from "stream-chat-react";
 import Game from "./Game";
 import CustomInput from "./CustomInput";
+import { SignInButton, ethos } from "ethos-connect";
+
 function JoinGame() {
   const [rivalUsername, setRivalUsername] = useState("");
   const { client } = useChatContext();
@@ -24,11 +26,12 @@ function JoinGame() {
   return (
     <>
       {channel ? (
+      
         <Channel channel={channel} Input={CustomInput}>
           <Game channel={channel} setChannel={setChannel} />
-        </Channel>
+        </Channel>  
       ) : (
-        <div className="joinGame">
+        <div className="joinGame"><SignInButton/>
           <h4>Create Game</h4>
           <input
             placeholder="Username of rival..."
